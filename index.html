@@ -201,6 +201,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .stats b.cnt{font-variant-numeric:tabular-nums}
 .svc article{cursor:default}
 
+/* título interativo */
+.hero h1 .wd{display:inline-block;white-space:nowrap}
+.hero h1 .l{display:inline-block;transform:translateY(calc(var(--a,0) * -18px)) scale(calc(1 + var(--a,0) * .07)) rotate(calc(var(--a,0) * -3deg));transition:transform .4s cubic-bezier(.2,.7,.1,1),color .3s,text-shadow .4s;will-change:transform}
+.hero h1 .wd.acc{color:#3461e0}
+.hero h1 .wd.acc .l{text-shadow:0 0 calc(var(--a,0) * 36px) rgba(52,97,224,.85)}
+.hero h1 .wd.acc .l:hover{color:#fff}
+.hero .wrap{transition:transform .2s linear,opacity .2s linear}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -255,7 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <video autoplay muted loop playsinline data-mp="posterA" aria-hidden="true"><source data-m="reelA" type="video/mp4"></video>
   <div class="wrap">
     <p class="tag"><span class="rec"></span> Fotografia · Filmagem · Edição · Aracaju/SE</p>
-    <h1>Você sonha <em>e eu crio</em></h1>
+    <h1 id="title" aria-label="Você sonha e eu crio"><span class="wd">Você</span> <span class="wd">sonha</span> <span class="wd acc">e</span> <span class="wd acc">eu</span> <span class="wd acc">crio</span></h1>
     <p class="sub">Eventos, ensaios e produções com a luz no lugar certo. Imagem de cinema, do primeiro briefing à entrega final.</p>
     <div class="row">
       <a class="btn" href="#trabalhos">Ver trabalhos <span class="arr">→</span></a>
@@ -279,19 +287,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       </div>
     </div>
     <div class="grid" id="grid">
-      <button class="work w2 reveal" data-f="film" data-type="video" data-m-src="reelA" data-title="Vaquejada" data-cap="Filme · 16:9"><video muted loop playsinline preload="metadata" data-mp="posterA"><source data-m="reelA" type="video/mp4"></video><span class="play">▶</span><div class="info"><h3>Vaquejada</h3><span>Filme · 16:9</span></div></button>
-      <button class="work reveal" data-f="film" data-type="video" data-m-src="reelB" data-title="Vertical" data-cap="Filme · 9:16"><video muted loop playsinline preload="metadata" data-mp="posterB"><source data-m="reelB" type="video/mp4"></video><span class="play">▶</span><div class="info"><h3>Vertical</h3><span>Filme · 9:16</span></div></button>
-      <button class="work reveal" data-f="foto" data-type="img" data-m-src="bridge" data-title="Ponte" data-cap="Foto · Pôr do sol"><img loading="lazy" decoding="async" data-m="bridge" alt="Ponte estaiada ao pôr do sol"><div class="info"><h3>Ponte</h3><span>Foto · Luz natural</span></div></button>
-      <button class="work reveal" data-f="foto" data-type="img" data-m-src="sunset" data-title="Golden hour" data-cap="Foto · Golden hour"><img loading="lazy" decoding="async" data-m="sunset" alt="Pôr do sol atrás de cerca"><div class="info"><h3>Golden hour</h3><span>Foto · Natural</span></div></button>
-      <button class="work w6 reveal" data-f="foto" data-type="img" data-m-src="portrait" data-title="Retrato" data-cap="Foto · Bastidores"><img loading="lazy" decoding="async" data-m="portrait" alt="Fotógrafo em ação" style="object-position:50% 30%"><div class="info"><h3>Bastidores</h3><span>Foto · Behind the scenes</span></div></button>
-      <button class="work w6 reveal" data-f="foto" data-type="img" data-m-src="posterA" data-title="Cartaz A" data-cap="Peça · Cartaz"><img loading="lazy" decoding="async" data-m="posterA" alt="Cartaz de evento"><div class="info"><h3>Cartaz</h3><span>Peça gráfica</span></div></button>
+      <button class="work w2 reveal" data-f="film" data-type="video" data-m-src="reelA" data-title="Vaquejada" data-cap="Filme · 16:9"><video muted loop playsinline preload="auto" data-mp="posterA"><source data-m="reelA" type="video/mp4"></video><span class="play">▶</span><div class="info"><h3>Vaquejada</h3><span>Filme · 16:9</span></div></button>
+      <button class="work reveal" data-f="film" data-type="video" data-m-src="reelB" data-title="Vertical" data-cap="Filme · 9:16"><video muted loop playsinline preload="auto" data-mp="posterB"><source data-m="reelB" type="video/mp4"></video><span class="play">▶</span><div class="info"><h3>Vertical</h3><span>Filme · 9:16</span></div></button>
+      <button class="work reveal" data-f="foto" data-type="img" data-m-src="bridge" data-title="Ponte" data-cap="Foto · Pôr do sol"><img data-m="bridge" alt="Ponte estaiada ao pôr do sol"><div class="info"><h3>Ponte</h3><span>Foto · Luz natural</span></div></button>
+      <button class="work reveal" data-f="foto" data-type="img" data-m-src="sunset" data-title="Golden hour" data-cap="Foto · Golden hour"><img data-m="sunset" alt="Pôr do sol atrás de cerca"><div class="info"><h3>Golden hour</h3><span>Foto · Natural</span></div></button>
+      <button class="work w6 reveal" data-f="foto" data-type="img" data-m-src="portrait" data-title="Retrato" data-cap="Foto · Bastidores"><img data-m="portrait" alt="Fotógrafo em ação" style="object-position:50% 30%"><div class="info"><h3>Bastidores</h3><span>Foto · Behind the scenes</span></div></button>
+      <button class="work w6 reveal" data-f="foto" data-type="img" data-m-src="posterA" data-title="Cartaz A" data-cap="Peça · Cartaz"><img data-m="posterA" alt="Cartaz de evento"><div class="info"><h3>Cartaz</h3><span>Peça gráfica</span></div></button>
+      <button class="work reveal" data-f="foto" data-type="img" data-m-src="vaq" data-title="Vaquejada" data-cap="Foto · Vertical"><img data-m="vaq" alt="Vaquejada, dois cavaleiros na pista"><div class="info"><h3>Vaquejada</h3><span>Foto · Vertical</span></div></button>
     </div>
   </div>
 </section>
 
 <section class="sec alt" id="sobre">
   <div class="wrap about">
-    <div class="ph reveal"><img loading="lazy" decoding="async" data-m="portrait" alt="Júnior, fotógrafo e cinegrafista" style="object-position:50% 25%"><span class="tagbox">Júnior · Aracaju</span></div>
+    <div class="ph reveal"><img data-m="portrait" alt="Júnior, fotógrafo e cinegrafista" style="object-position:50% 25%"><span class="tagbox">Júnior · Aracaju</span></div>
     <div class="reveal">
       <p class="eyebrow">Quem está atrás da câmera</p>
       <h2>Júnior</h2>
@@ -384,7 +393,8 @@ const MEDIA={"reelA":"reel-a.mp4",
 "portrait":"portrait.jpg",
 "posterA":"poster-a.jpg",
 "posterB":"poster-b.jpg",
-"sunset":"sunset.jpg"};
+"sunset":"sunset.jpg",
+"vaq":"vaquejada.jpg"};
 document.querySelectorAll("[data-m]").forEach(el=>{el.src=MEDIA[el.dataset.m];if(el.tagName==="SOURCE"&&el.parentElement.load)el.parentElement.load()});
 document.querySelectorAll("[data-mp]").forEach(v=>v.poster=MEDIA[v.dataset.mp]);
 document.querySelectorAll("[data-m-src]").forEach(w=>w.dataset.src=MEDIA[w.dataset.mSrc]);
@@ -518,6 +528,25 @@ hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();spo
 /* título: entrada suave */
 const h1=$('.hero h1');
 if(h1&&!reduce){h1.style.opacity='0';h1.style.transform='translateY(30px)';h1.style.transition='opacity 1.2s var(--ease),transform 1.2s var(--ease)';requestAnimationFrame(()=>requestAnimationFrame(()=>{h1.style.opacity='1';h1.style.transform='none'}))}
+/* título: letras reagem ao cursor e o hero acompanha a rolagem */
+const title=$('#title');
+if(title){
+  const letters=[];
+  $$('.wd',title).forEach(w=>{const txt=w.textContent;w.textContent='';[...txt].forEach(c=>{const s=document.createElement('span');s.className='l';s.textContent=c;w.appendChild(s);letters.push(s)})});
+  let mx=-999,my=-999,raf=0;
+  const update=()=>{raf=0;letters.forEach(l=>{const r=l.getBoundingClientRect();const d=Math.hypot(r.left+r.width/2-mx,r.top+r.height/2-my);l.style.setProperty('--a',Math.max(0,1-d/150).toFixed(3))})};
+  if(!reduce){
+    const move=e=>{mx=e.clientX;my=e.clientY;if(!raf)raf=requestAnimationFrame(update)};
+    title.addEventListener('pointermove',move);
+    title.addEventListener('pointerdown',move);
+    title.addEventListener('pointerleave',()=>{mx=-999;my=-999;letters.forEach(l=>l.style.setProperty('--a',0))});
+  }
+}
+const heroWrap=$('.hero .wrap');
+if(heroWrap&&!reduce){
+  addEventListener('scroll',()=>{const p=Math.min(1,scrollY/520);heroWrap.style.transform=`translateY(${(p*-70).toFixed(1)}px)`;heroWrap.style.opacity=(1-p*.7).toFixed(3)},{passive:true});
+}
+
 /* contadores */
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
   const b=e.target,target=parseInt(b.textContent,10);if(isNaN(target)||reduce)return;
