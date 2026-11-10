@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CabeleraJR · Fotos & Filmes · Aracaju</title>
+<meta name="theme-color" content="#030305">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="CabeleraJR · Fotos & Filmes">
+<meta property="og:description" content="Fotografia, filmagem e edição em Aracaju.">
+<meta name="description" content="Fotografia, filmagem e edição em Aracaju. Eventos, ensaios e produções.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#030305;--bg2:#08090d;--card:#141414;--line:#262626;--txt:#f2f2f2;--mut:#9a9a9a;--red:#1e3a8a;--red-d:#172e6e;--f:"Inter","Helvetica Neue",Arial,sans-serif;--m:"Montserrat","Helvetica Neue",Arial,sans-serif;--ease:cubic-bezier(.2,.7,.1,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px;background:#030305;color-scheme:dark;scrollbar-color:#1e3a8a #030305;scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;background:#030305}
+::-webkit-scrollbar-thumb{background:#1e3a8a;border-radius:10px;border:2px solid #030305}
+::-webkit-scrollbar-thumb:hover{background:#172e6e}
+body{margin:0;background:var(--bg);color:var(--txt);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.eyebrow{font:500 12px var(--m);letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin:0 0 18px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--red)}
+h1,h2,h3{margin:0;font-weight:700;text-transform:uppercase;line-height:.92;font-stretch:100%}
+h2{font-size:clamp(40px,6vw,84px)}
+.sec{padding:120px 0;position:relative}
+.sec.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.lead{color:var(--mut);max-width:58ch;font-size:18px}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:20px;padding:8px 8px 8px 26px;border:1px solid var(--red);border-radius:999px;background:var(--red);color:#fff;text-decoration:none;font:600 12px/1 var(--m);letter-spacing:.16em;text-transform:uppercase;box-shadow:0 12px 32px -12px rgba(30,58,138,.7);transition:transform .45s var(--ease),box-shadow .45s,color .4s,border-color .4s}
+.btn:not(:has(.arr)){padding:17px 28px}
+.btn::before{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);z-index:-1;border-radius:inherit}
+.btn:hover{color:var(--red);border-color:#fff;transform:translateY(-2px);box-shadow:0 18px 42px -12px rgba(30,58,138,.85)}
+.btn:hover::before{transform:scaleX(1)}
+.btn .arr{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--red);font-size:15px;letter-spacing:0;transition:transform .55s var(--ease),background .4s,color .4s}
+.btn:hover .arr{transform:rotate(-45deg);background:var(--red);color:#fff}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);box-shadow:none}
+.btn.ghost::before{background:var(--red)}
+.btn.ghost .arr{background:var(--red);color:#fff}
+.btn.ghost:hover{color:#fff;border-color:var(--red)}
+.btn.ghost:hover .arr{background:#fff;color:var(--red)}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent;padding-top:env(safe-area-inset-top,0px)}
+header.scrolled{background:rgba(3,3,5,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.logo b{font:700 22px var(--f);font-stretch:112%;letter-spacing:.01em}
+.logo b span{color:var(--red)}
+.logo small{font:500 10px var(--m);letter-spacing:.2em;color:var(--mut);margin-top:6px}
+.links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.links a{text-decoration:none;font:500 12px var(--m);letter-spacing:.12em;text-transform:uppercase;color:#cfcfcf;position:relative;padding:6px 0}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);transition:width .35s var(--ease)}
+.links a:hover,.links a.active{color:#fff}
+.links a:hover::after,.links a.active::after{width:100%}
+.burger{display:none;background:none;border:1px solid var(--line);width:44px;height:44px;border-radius:2px;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s,opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:25px}
+.menu-open .burger i:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){transform:translateY(-0px) rotate(-45deg);top:25px}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--red);transform-origin:left;transform:scaleX(0)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;padding:120px 0 90px}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:saturate(.85) contrast(1.05)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(3,3,5,.95) 0%,rgba(3,3,5,.55) 55%,rgba(3,3,5,.2) 100%),linear-gradient(0deg,#030305 0%,transparent 40%)}
+.hero .tag{font:500 12px var(--m);letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:26px;color:#ddd}
+.rec{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite;flex:none}
+@keyframes pulse{50%{opacity:.2}}
+.hero h1{font-size:clamp(40px,7vw,100px);line-height:1.05;letter-spacing:-.01em;max-width:14ch;font-stretch:100%}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .sub{margin:28px 0 36px;max-width:46ch;font-size:clamp(17px,1.6vw,20px);color:#dcdcdc}
+.hero .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .meta{position:absolute;right:clamp(18px,4vw,40px);bottom:40px;font:500 11px var(--m);letter-spacing:.1em;color:#bbb;text-align:right;text-transform:uppercase;line-height:1.9}
+.hero .meta b{color:#fff;font-weight:500}
+.scroll{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);font:500 10px var(--m);letter-spacing:.2em;color:#aaa;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll::after{content:"";width:1px;height:38px;background:linear-gradient(var(--red),transparent);animation:drop 2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* trabalhos */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:48px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{background:none;border:1px solid var(--line);padding:10px 18px;font:500 12px var(--m);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);transition:all .25s}
+.filters button:hover{color:#fff;border-color:#555}
+.filters button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.work{position:relative;overflow:hidden;background:var(--card);border:0;padding:0;text-align:left;grid-column:span 4;aspect-ratio:4/5;transition:opacity .4s,transform .4s var(--ease)}
+.work.w2{grid-column:span 8;aspect-ratio:16/10}
+.work.w6{grid-column:span 6;aspect-ratio:16/9}
+.work img,.work video{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .6s}
+.work::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent 55%);opacity:.85;transition:opacity .4s}
+.work .info{position:absolute;left:0;right:0;bottom:0;padding:22px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.work .info h3{font-size:24px;font-stretch:100%;line-height:1.05}
+.work .info span{font:500 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.work .play{position:absolute;top:18px;right:18px;z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);display:grid;place-items:center;background:rgba(0,0,0,.4);font-size:14px}
+.work:hover img,.work:hover video{transform:scale(1.05)}
+.work:hover::after{opacity:1}
+.work:hover{outline:1px solid var(--red);outline-offset:-1px}
+.work.hide{display:none}
+.work.in{animation:rise .7s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:40px 18px}
+#lb.open{display:flex;animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+#lb .box{max-width:1200px;width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
+#lb img,#lb video{max-height:78vh;max-width:100%;object-fit:contain}
+#lb .cap{font:500 12px var(--m);letter-spacing:.12em;text-transform:uppercase;color:#bbb;display:flex;gap:20px;align-items:center}
+#lb .cap b{color:var(--red);font-weight:500}
+#lb .x{position:absolute;top:18px;right:18px;width:48px;height:48px;background:none;border:1px solid #444;color:#fff;font-size:22px}
+#lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;background:rgba(0,0,0,.5);border:1px solid #444;color:#fff;font-size:20px}
+#lb .prev{left:14px}#lb .next{right:14px}
+
+/* sobre */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.about .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:#111}
+.about .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.05)}
+.about .ph::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.35);z-index:1;pointer-events:none}
+.about .ph .tagbox{position:absolute;left:0;bottom:0;background:var(--red);color:#fff;font:500 11px var(--m);letter-spacing:.12em;padding:10px 14px;text-transform:uppercase;z-index:2}
+.quote{font:700 clamp(26px,3vw,38px)/1.15 var(--f);font-stretch:90%;text-transform:none;margin:30px 0 18px;border-left:3px solid var(--red);padding-left:22px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.stats div{padding:22px 0 0}
+.stats b{display:block;font:700 40px var(--f);font-stretch:100%}
+.stats span{font:500 11px var(--m);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+
+/* servicos */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:56px}
+.svc article{padding:34px 26px 40px 0;border-bottom:1px solid var(--line);position:relative;transition:background .4s,padding .4s var(--ease)}
+.svc article+article{padding-left:26px;border-left:1px solid var(--line)}
+.svc article:hover{background:linear-gradient(180deg,rgba(30,58,138,.12),transparent)}
+.svc article:hover h3{color:var(--red)}
+.svc .n{font:500 12px var(--m);color:var(--mut);letter-spacing:.12em}
+.svc h3{font-size:34px;margin:18px 0 14px;transition:color .3s}
+.svc p{color:var(--mut);margin:0 0 20px;font-size:15px}
+.svc ul{list-style:none;padding:0;margin:0}
+.svc li{font:500 12px var(--m);text-transform:uppercase;letter-spacing:.08em;padding:9px 0;border-top:1px dashed #2c2c2c;display:flex;justify-content:space-between}
+.svc li::after{content:"→";color:var(--red);opacity:0;transform:translateX(-6px);transition:all .3s}
+.svc li:hover::after{opacity:1;transform:none}
+
+/* processo */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line)}
+.steps .bar{position:absolute;left:0;top:22px;height:1px;background:var(--red);width:0;transition:width 1.6s var(--ease)}
+.step{position:relative;padding-right:22px;opacity:.35;transform:translateY(16px);transition:opacity .6s,transform .6s var(--ease)}
+.step.on{opacity:1;transform:none}
+.step .dot{width:45px;height:45px;border-radius:50%;background:var(--bg);border:1px solid var(--red);display:grid;place-items:center;font:500 13px var(--m);margin-bottom:24px;position:relative;z-index:1;transition:background .4s}
+.step.on .dot{background:var(--red);color:#fff}
+.step h3{font-size:22px;margin-bottom:12px}
+.step p{color:var(--mut);font-size:14px;margin:0}
+
+/* pedido */
+.order{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:start}
+.form{display:grid;gap:22px}
+.field label{display:block;font:500 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{background:var(--card);border:1px solid var(--line);padding:11px 16px;font-size:14px;transition:all .25s;color:#ddd}
+.opts button:hover{border-color:#555}
+.opts button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.field textarea{width:100%;background:var(--card);border:1px solid var(--line);padding:14px;min-height:110px;resize:vertical;border-radius:2px}
+.field textarea:focus{outline:none;border-color:var(--red)}
+.summary{background:var(--card);border:1px solid var(--line);padding:30px;position:sticky;top:110px}
+.summary pre{white-space:pre-wrap;font:400 13px/1.7 var(--m);color:#ccc;margin:18px 0 24px;min-height:140px}
+.summary .btns{display:flex;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,140%);background:var(--red);color:#fff;padding:14px 22px;font:500 13px var(--m);letter-spacing:.06em;transition:transform .4s var(--ease);z-index:90;border-radius:2px}
+.toast.show{transform:translate(-50%,0)}
+
+/* contato */
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end}
+.contact h2 span{color:var(--red)}
+.cbox{display:grid;gap:12px}
+.cbox a{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border:1px solid var(--line);text-decoration:none;background:var(--card);transition:border-color .3s,background .3s}
+.cbox a:hover{border-color:var(--red);background:#0b1430}
+.cbox small{font:500 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:block}
+.cbox strong{font-size:19px;font-weight:700}
+.cbox .go{color:var(--red);font-size:20px}
+footer{border-top:1px solid var(--line);padding:30px 0;font:500 11px var(--m);letter-spacing:.08em;color:#777;text-transform:uppercase}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+
+/* interatividade extra */
+.spot{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px circle at var(--mx,70%) var(--my,30%),rgba(30,58,138,.22),transparent 60%);transition:opacity .4s}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:200;border-radius:50%;transform:translate(-50%,-50%)}
+.cur-dot{width:6px;height:6px;background:#1e3a8a}
+.cur-ring{width:38px;height:38px;border:1px solid rgba(30,58,138,.7);transition:width .3s,height .3s,background .3s}
+.cur-ring.big{width:70px;height:70px;background:rgba(30,58,138,.12)}
+@media (pointer:coarse){.cur-dot,.cur-ring{display:none}}
+.btn{will-change:transform}
+.work{transform-style:preserve-3d}
+.hero h1{color:#fff;padding-top:.06em}
+.hero h1 em{background:none;-webkit-text-fill-color:#1e3a8a;color:#1e3a8a}
+.hero h1 span.w{display:inline-block;opacity:0;transform:translateY(40px);animation:wordIn .9s var(--ease) forwards}
+@keyframes wordIn{to{opacity:1;transform:none}}
+.stats b.cnt{font-variant-numeric:tabular-nums}
+.svc article{cursor:default}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .links{position:fixed;inset:76px 0 auto 0;background:#030305;flex-direction:column;gap:0;padding:12px 18px 24px;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .45s var(--ease);visibility:hidden}
+  .menu-open .links{transform:none;visibility:visible}
+  .links a{display:block;padding:16px 0;font-size:14px;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+  .about,.order,.contact{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr 1fr}
+  .svc article:nth-child(3){border-left:0;padding-left:0}
+  .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+  .steps::before,.steps .bar{display:none}
+  .summary{position:static}
+  .work,.work.w2,.work.w6{grid-column:span 12;aspect-ratio:4/5}
+  .work.w2{aspect-ratio:16/11}
+}
+@media (max-width:600px){
+  .sec{padding:84px 0}
+  .svc{grid-template-columns:1fr}
+  .svc article+article{border-left:0;padding-left:0}
+  .stats{grid-template-columns:1fr 1fr 1fr}
+  .stats b{font-size:30px}
+  .hero .meta{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* refinamento visual */
+h1,h2,h3{font-weight:700;letter-spacing:-.01em;text-transform:none}
+h2{font-size:clamp(36px,5vw,68px);line-height:1.02}
+.hero h1{font-size:clamp(40px,6.4vw,92px);font-weight:700;line-height:1.02;letter-spacing:-.02em;max-width:16ch}
+.logo b{font-weight:700}
+.eyebrow{font-weight:500;letter-spacing:.16em}
+.quote{font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1.25}
+.stats b{font-weight:600}
+.svc h3{font-weight:700}
+.work{border-radius:6px;aspect-ratio:4/3}
+.work.w2{aspect-ratio:16/9}
+.work img,.work video{border-radius:6px}
+.work::after,.work .info{display:none}
+.work .play{background:rgba(3,3,5,.55);border-color:rgba(255,255,255,.35);backdrop-filter:blur(4px)}
+.work:hover{outline:none;box-shadow:0 20px 50px -20px rgba(30,58,138,.55)}
+.work:hover img,.work:hover video{transform:scale(1.04)}
+.grid{gap:14px}
+.btn{font-weight:500}
+.sec{padding:112px 0}
+.lead{font-size:17px;line-height:1.65}
+.svc h3{font-size:30px}
+.hero .sub{font-weight:400}
+.about .ph,.summary{border-radius:6px}
+.about .ph .tagbox{font-weight:500}
+@media (max-width:980px){.work,.work.w2,.work.w6{aspect-ratio:4/3}}
+.hero h1{text-transform:uppercase}
+.phrases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin:48px 0 40px}
+.phrases>div{padding:22px 24px 0 0}
+.phrases>div+div{padding-left:24px;border-left:1px solid var(--line)}
+.phrases b{display:block;font:500 12px var(--m);letter-spacing:.14em;color:var(--red);margin-bottom:10px}
+.phrases span{display:block;color:#d6d6d6;font-size:15px;line-height:1.5}
+@media (max-width:900px){.phrases{grid-template-columns:1fr 1fr}.phrases>div:nth-child(3){border-left:0;padding-left:0}}
+@media (max-width:560px){.phrases{grid-template-columns:1fr}.phrases>div+div{border-left:0;padding-left:0}}
+
+/* tipografia e peso */
+body{font-family:"Inter","Helvetica Neue",Arial,sans-serif;font-weight:400}
+h1,h2,h3{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-weight:800;letter-spacing:-.02em}
+.hero h1{font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:1}
+.logo b{font-family:"Montserrat",sans-serif;font-weight:800}
+.logo small,.eyebrow,.links a,.filters button,.btn,.tag,.stats span,.svc li,.svc .n,.phrases b,.work .info span,.cbox small,footer,.hero .meta,.scroll{font-family:"Montserrat",sans-serif;font-weight:600}
+.quote{font-family:"Montserrat",sans-serif;font-weight:700}
+.stats b{font-family:"Montserrat",sans-serif;font-weight:800}
+.svc h3,.step h3,.work .info h3,.cbox strong{font-weight:800}
+.lead,.hero .sub,.svc p,.step p,.phrases span{font-weight:400}
+.btn{font-weight:600}
+
+/* interatividade */
+.work::after{display:grid;place-items:center;content:"+";position:absolute;inset:0;z-index:3;background:rgba(30,58,138,.45);color:#fff;font:300 56px/1 "Inter",sans-serif;opacity:0;transition:opacity .45s var(--ease)}
+.work:hover::after{opacity:1}
+.work.film:hover::after,.work[data-type="video"]:hover::after{content:"▶";font-size:34px}
+.work .play{transition:transform .45s var(--ease),opacity .4s}
+.work:hover .play{opacity:0;transform:scale(.6)}
+.work{cursor:pointer}
+.work img,.work video{transition:transform 1.1s var(--ease),filter .6s}
+.work:hover img,.work:hover video{filter:saturate(1.1) contrast(1.05)}
+.phrases>div{transition:transform .45s var(--ease),background .45s}
+.phrases>div:hover{transform:translateY(-6px)}
+.phrases>div:hover b{color:#fff}
+.svc article{transition:background .45s,transform .45s var(--ease)}
+.svc article:hover{transform:translateY(-6px)}
+.step .dot{transition:background .4s,transform .4s var(--ease)}
+.step:hover .dot{transform:scale(1.12)}
+.filters button{transition:all .3s var(--ease)}
+.filters button:hover{transform:translateY(-2px)}
+.links a:hover{color:#fff}
+.cbox a{transition:border-color .3s,background .3s,transform .4s var(--ease)}
+.cbox a:hover{transform:translateX(8px)}
+.about .ph img{transition:transform 1.2s var(--ease)}
+.about .ph:hover img{transform:scale(1.05)}
+.hero video{will-change:transform}
+
+/* ajustes finais */
+.hero h1{font-size:clamp(34px,4.6vw,66px)!important;max-width:18ch}
+.work::after{display:none!important;content:none!important}
+.work:hover{outline:none!important;box-shadow:none!important}
+.work:hover .play{opacity:1!important;transform:none!important}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="CabeleraJR, início"><b>CABELERA<span>JR</span></b><small>FOTOS &amp; FILMES</small></a>
+    <ul class="links" id="links">
+      <li><a href="#trabalhos">Trabalhos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#pedido">Pedido</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a class="btn" href="#pedido" style="padding:11px 18px;font-size:14px">Orçamento</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="progress" id="prog"></div>
+</header>
+
+<section class="hero" id="top">
+  <video autoplay muted loop playsinline data-mp="posterA" aria-hidden="true"><source data-m="reelA" type="video/mp4"></video>
+  <div class="wrap">
+    <p class="tag"><span class="rec"></span> Fotografia · Filmagem · Edição · Aracaju/SE</p>
+    <h1>VOCÊ SONHA <em>E EU CRIO</em></h1>
+    <p class="sub">Fotografia, filmagem e edição para empresas, eventos e marcas em Aracaju e região, do briefing à entrega final.</p>
+    <div class="row">
+      <a class="btn" href="#trabalhos">Ver trabalhos <span class="arr">→</span></a>
+      <a class="btn ghost" href="#pedido">Pedir orçamento</a>
+    </div>
+  </div>
+  <div class="meta">Aracaju · SE<br><b id="clock">--:--:--</b></div>
+  <div class="scroll">Role</div>
+</section>
+
+
+
+<section class="sec" id="trabalhos">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><p class="eyebrow">Portfólio selecionado</p><h2>Projetos<br>e produções</h2><p class="lead" style="margin-top:22px">Cada trabalho passa por planejamento, captação e edição com o mesmo cuidado, do primeiro roteiro à entrega final.</p></div>
+      <div class="filters" role="group" aria-label="Filtrar trabalhos">
+        <button aria-pressed="true" data-f="all">Todos</button>
+        <button aria-pressed="false" data-f="film">Filmes</button>
+        <button aria-pressed="false" data-f="foto">Fotos</button>
+      </div>
+    </div>
+    <div class="phrases reveal"><div><b>01</b><span>Roteiro e planejamento antes da câmera ligar.</span></div><div><b>02</b><span>Luz, enquadramento e direção pensados para cada cena.</span></div><div><b>03</b><span>Captação com atenção aos momentos que não se repetem.</span></div><div><b>04</b><span>Edição com ritmo, cor e som para o resultado final.</span></div></div>
+    <div class="grid" id="grid">
+      <button class="work w2 reveal" data-f="film" data-type="video" data-m-src="reelA" data-title="Vídeo"><video muted loop playsinline preload="metadata" data-mp="posterA"><source data-m="reelA" type="video/mp4"></video><span class="play">▶</span></button>
+      <button class="work  reveal" data-f="film" data-type="video" data-m-src="reelB" data-title="Vídeo"><video muted loop playsinline preload="metadata" data-mp="posterB"><source data-m="reelB" type="video/mp4"></video><span class="play">▶</span></button>
+      <button class="work  reveal" data-f="film" data-type="video" data-m-src="reelC" data-title="Vídeo"><video muted loop playsinline preload="metadata" data-mp="posterC"><source data-m="reelC" type="video/mp4"></video><span class="play">▶</span></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p0888" data-title="Foto"><img loading="lazy" decoding="async" data-m="p0888" alt="Ponte estaiada ao pôr do sol"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1021" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1021" alt="Vista da cidade ao entardecer"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1103" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1103" alt="Pôr do sol atrás de cerca"></button>
+      <button class="work w6 reveal" data-f="foto" data-type="img" data-m-src="p1023" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1023" alt="Cavalo em close"></button>
+      <button class="work w6 reveal" data-f="foto" data-type="img" data-m-src="p1025" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1025" alt="Fotógrafo em ação" style="object-position:50% 30%"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1840" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1840" alt="Caminhonete vermelha de frente"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1844" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1844" alt="Caminhonete vermelha lateral"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1912" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1912" alt="Trator no pátio ao pôr do sol"></button>
+      <button class="work w2 reveal" data-f="foto" data-type="img" data-m-src="p1910" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1910" alt="Zebu no curral"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1911" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1911" alt="Bezerro no curral"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1846" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1846" alt="Criança com pistola de brinquedo"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1847" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1847" alt="Piloto operando drone"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1913" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1913" alt="Coruja-buraqueira em poste"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p1914" data-title="Foto"><img loading="lazy" decoding="async" data-m="p1914" alt="Coruja-buraqueira ao pôr do sol"></button>
+      <button class="work  reveal" data-f="foto" data-type="img" data-m-src="p0757" data-title="Foto"><img loading="lazy" decoding="async" data-m="p0757" alt="Homem abraçando cavalo"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="sobre">
+  <div class="wrap about">
+    <div class="ph reveal"><img loading="lazy" decoding="async" data-m="portrait" alt="Júnior, fotógrafo e cinegrafista" style="object-position:50% 25%"><span class="tagbox">Júnior · Aracaju</span></div>
+    <div class="reveal">
+      <p class="eyebrow">Quem está atrás da câmera</p>
+      <h2>Júnior</h2>
+      <p class="quote">Eu transformo ideias em imagens que parecem ter sido feitas para durar.</p>
+      <p class="lead">Fotógrafo e cinegrafista em Aracaju. Trabalho com eventos, ensaios, filmes institucionais e produções sob medida, sempre com a mesma preocupação: luz certa, enquadramento limpo e um resultado que você tenha orgulho de mostrar.</p>
+      <div class="stats">
+        <div><b>4</b><span>Frentes de trabalho</span></div>
+        <div><b>5</b><span>Etapas de produção</span></div>
+        <div><b>SE</b><span>Base em Aracaju</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="servicos">
+  <div class="wrap">
+    <div class="reveal"><p class="eyebrow">Serviços</p><h2>O que cabe<br>na cena</h2><p class="lead" style="margin-top:22px">Do registro do dia ao filme completo. Cada frente pode ser contratada sozinha ou junto com as outras.</p></div>
+    <div class="svc reveal">
+      <article><span class="n">01</span><h3>Fotografia</h3><p>Eventos, ensaios e retratos com olhar de quem entende de luz, e seleção cuidadosa das melhores imagens.</p><ul><li>Eventos <span>→</span></li><li>Ensaios <span>→</span></li><li>Retratos <span>→</span></li></ul></article>
+      <article><span class="n">02</span><h3>Filmagem</h3><p>Filmes institucionais, clipes e coberturas, com movimento pensado e captação cuidadosa.</p><ul><li>Institucional <span>→</span></li><li>Clipes <span>→</span></li><li>Cobertura <span>→</span></li></ul></article>
+      <article><span class="n">03</span><h3>Edição</h3><p>Cortes com ritmo, correção de cor e versões para cada rede, do feed ao vertical.</p><ul><li>Motion <span>→</span></li><li>Cortes para redes <span>→</span></li></ul></article>
+      <article><span class="n">04</span><h3>Produções</h3><p>Do roteiro à locação. Planejamento e direção para projetos que precisam de uma ideia clara.</p><ul><li>Roteiro <span>→</span></li><li>Direção <span>→</span></li><li>Locação <span>→</span></li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="processo">
+  <div class="wrap">
+    <div class="reveal"><p class="eyebrow">Processo</p><h2>Do papo<br>à entrega</h2><p class="lead" style="margin-top:22px">Cinco etapas, na ordem em que acontecem.</p></div>
+    <div class="steps" id="steps">
+      <div class="bar" id="bar"></div>
+      <div class="step"><div class="dot">01</div><h3>Briefing</h3><p>Conversa sobre a ideia, o público, a data e o que precisa existir no final.</p></div>
+      <div class="step"><div class="dot">02</div><h3>Pré-produção</h3><p>Lista de cenas ou fotos, locação, horários de luz e equipe definidos.</p></div>
+      <div class="step"><div class="dot">03</div><h3>Captação</h3><p>O dia de gravar e fotografar, com atenção aos momentos que não se repetem.</p></div>
+      <div class="step"><div class="dot">04</div><h3>Edição</h3><p>Seleção, cortes, cor e áudio. Você acompanha prévias antes da versão final.</p></div>
+      <div class="step"><div class="dot">05</div><h3>Entrega</h3><p>Arquivos finais nos formatos combinados, prontos para publicar ou imprimir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pedido">
+  <div class="wrap order">
+    <div class="reveal">
+      <p class="eyebrow">Monte seu pedido</p>
+      <h2>Peça um<br>orçamento</h2>
+      <p class="lead" style="margin-top:22px">Escolha o tipo de trabalho e o formato. Seu pedido sai pronto para enviar no WhatsApp.</p>
+      <div class="form" style="margin-top:40px">
+        <div class="field"><label>Serviço</label><div class="opts" data-group="svc"><button aria-pressed="true">Fotografia</button><button aria-pressed="false">Filmagem</button><button aria-pressed="false">Edição</button><button aria-pressed="false">Produção</button></div></div>
+        <div class="field"><label>Formato</label><div class="opts" data-group="fmt"><button aria-pressed="true">16:9 · YouTube</button><button aria-pressed="false">9:16 · Reels</button><button aria-pressed="false">1:1 · Feed</button></div></div>
+        <div class="field"><label>Tipo de evento ou projeto</label><div class="opts" data-group="tipo"><button aria-pressed="false">Evento</button><button aria-pressed="false">Ensaio</button><button aria-pressed="false">Marca ou negócio</button></div></div>
+        <div class="field"><label for="det">Detalhes (data, local, ideia)</label><textarea id="det" placeholder="Ex.: Casamento em Aracaju, 20/12, 2 câmeras, entrega de um filme de 3 minutos."></textarea></div>
+      </div>
+    </div>
+    <aside class="summary reveal">
+      <p class="eyebrow">Seu pedido</p>
+      <pre id="sum"></pre>
+      <div class="btns">
+        <a class="btn" id="wa" href="https://wa.me/message/VIK5OX3OOOKKE1" target="_blank" rel="noopener">Enviar no WhatsApp <span class="arr">→</span></a>
+        <button class="btn ghost" id="copy" type="button">Copiar pedido</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="sec alt" id="contato">
+  <div class="wrap contact">
+    <div class="reveal"><p class="eyebrow">Contato</p><h2>Vamos <span>gravar</span><br>algo?</h2></div>
+    <div class="cbox reveal">
+      <a href="https://wa.me/message/VIK5OX3OOOKKE1" target="_blank" rel="noopener"><div><small>WhatsApp · resposta rápida</small><strong>Chamar no WhatsApp</strong></div><span class="go">→</span></a>
+      <a href="https://www.instagram.com/cabelerajr_filmes/" target="_blank" rel="noopener"><div><small>Instagram</small><strong>@cabelerajr_filmes</strong></div><span class="go">→</span></a>
+      <a href="#pedido"><div><small>Orçamento</small><strong>Montar pedido</strong></div><span class="go">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© CabeleraJR Fotos &amp; Filmes · Aracaju, SE</span><span>Foto · Filme · Edição</span></div></footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Visualização do trabalho">
+  <button class="x" id="lbx" aria-label="Fechar">×</button>
+  <button class="nav prev" id="lbp" aria-label="Anterior">←</button>
+  <button class="nav next" id="lbn" aria-label="Próximo">→</button>
+  <div class="box" id="lbbox"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const MEDIA={"reelA":"reel-a.mp4",
+"reelB":"reel-b.mp4",
+"reelC":"reel-c.mp4",
+"posterA":"poster-a.jpg",
+"posterB":"poster-b.jpg",
+"posterC":"poster-c.jpg",
+"bridge":"bridge.jpg",
+"sunset":"sunset.jpg",
+"portrait":"portrait.jpg",
+"p0757":"foto-0757.jpg",
+"p0888":"foto-0888.jpg",
+"p1021":"foto-1021.jpg",
+"p1023":"foto-1023.jpg",
+"p1025":"foto-1025.jpg",
+"p1103":"foto-1103.jpg",
+"p1840":"foto-1840.jpg",
+"p1844":"foto-1844.jpg",
+"p1846":"foto-1846.jpg",
+"p1847":"foto-1847.jpg",
+"p1910":"foto-1910.jpg",
+"p1911":"foto-1911.jpg",
+"p1912":"foto-1912.jpg",
+"p1913":"foto-1913.jpg",
+"p1914":"foto-1914.jpg"};
+document.querySelectorAll("[data-m]").forEach(el=>{el.src=MEDIA[el.dataset.m];if(el.tagName==="SOURCE"&&el.parentElement.load)el.parentElement.load()});
+document.querySelectorAll("[data-mp]").forEach(v=>v.poster=MEDIA[v.dataset.mp]);
+document.querySelectorAll("[data-m-src]").forEach(w=>w.dataset.src=MEDIA[w.dataset.mSrc]);
+</script>
+<script>
+(()=>{
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* header: estado ao rolar + barra de progresso */
+const hdr=$('#hdr'), prog=$('#prog');
+const onScroll=()=>{const y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
+  hdr.classList.toggle('scrolled',y>40); prog.style.transform=`scaleX(${h>0?y/h:0})`;};
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* menu mobile */
+const burger=$('#burger');
+burger.addEventListener('click',()=>{const o=hdr.classList.toggle('menu-open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')});
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{hdr.classList.remove('menu-open');burger.setAttribute('aria-expanded','false')}));
+
+/* link ativo */
+const sections=['trabalhos','sobre','servicos','processo','pedido','contato'].map(id=>document.getElementById(id));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('#links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+sections.forEach(s=>io.observe(s));
+
+/* revelar ao rolar */
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach(el=>rio.observe(el));
+
+/* relógio de Aracaju (UTC-3) */
+const clk=$('#clock');
+const tick=()=>{const d=new Date(Date.now()-3*3600e3);clk.textContent=d.toISOString().substr(11,8)};
+tick(); setInterval(tick,1000);
+
+/* linha do tempo da seção de processo */
+const steps=$$('.step'), bar=$('#bar');
+const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  steps.forEach((s,i)=>setTimeout(()=>s.classList.add('on'),reduce?0:i*180));
+  bar.style.width='100%'; sio.disconnect();}}),{threshold:.35});
+sio.observe($('#steps'));
+
+/* filtro de trabalhos */
+const works=$$('.work');
+$$('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  $$('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.f;
+  works.forEach((w,i)=>{const show=f==='all'||w.dataset.f===f;
+    w.classList.toggle('hide',!show);
+    if(show){w.classList.remove('in');void w.offsetWidth;w.style.animationDelay=(i*60)+'ms';w.classList.add('in')}});
+}));
+
+/* vídeos da grade: rodam em loop enquanto estão visíveis na tela */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+  if(e.isIntersecting){v.muted=true;v.play().catch(()=>{})}else{v.pause()}}),{threshold:.25});
+$$('.work[data-type="video"] video').forEach(v=>{v.muted=true;v.loop=true;v.playsInline=true;vio.observe(v)});
+
+/* lightbox */
+const lb=$('#lb'), lbbox=$('#lbbox'); let cur=0, visible=[];
+const open=i=>{visible=works.filter(w=>!w.classList.contains('hide')); cur=i; render(); lb.classList.add('open'); document.body.style.overflow='hidden'; $('#lbx').focus();};
+const close=()=>{lb.classList.remove('open'); lbbox.innerHTML=''; document.body.style.overflow='';};
+const render=()=>{
+  const w=visible[cur]; const t=w.dataset.type;
+  lbbox.innerHTML = (t==='video'
+    ? `<video src="${w.dataset.src}" controls autoplay playsinline></video>`
+    : `<img src="${w.dataset.src}" alt="${w.dataset.title}">`)
+    ;
+};
+works.forEach(w=>w.addEventListener('click',()=>open(visible.indexOf(w)>=0?visible.indexOf(w):works.filter(x=>!x.classList.contains('hide')).indexOf(w))));
+const step=d=>{cur=(cur+d+visible.length)%visible.length;render()};
+$('#lbn').addEventListener('click',()=>step(1));
+$('#lbp').addEventListener('click',()=>step(-1));
+$('#lbx').addEventListener('click',close);
+lb.addEventListener('click',e=>{if(e.target===lb)close()});
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')close(); if(e.key==='ArrowRight')step(1); if(e.key==='ArrowLeft')step(-1);});
+
+/* montador de pedido */
+const state={svc:'Fotografia',fmt:'16:9 · YouTube',tipo:''};
+$$('.opts').forEach(g=>{
+  const key=g.dataset.group;
+  $$('button',g).forEach(b=>b.addEventListener('click',()=>{
+    const on=b.getAttribute('aria-pressed')==='true';
+    if(key==='tipo'){ $$('button',g).forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed',String(!on)); state.tipo=on?'':b.textContent; }
+    else { $$('button',g).forEach(x=>x.setAttribute('aria-pressed',String(x===b))); state[key]=b.textContent; }
+    render2();
+  }));
+});
+const det=$('#det'); det.addEventListener('input',render2);
+function message(){
+  const parts=['Olá, Júnior! Quero um orçamento.',
+    'Serviço: '+state.svc,
+    'Formato: '+state.fmt,
+    'Tipo: '+(state.tipo||'a definir'),
+    'Detalhes: '+(det.value.trim()||'a combinar')];
+  return parts.join('\n');
+}
+function render2(){ $('#sum').textContent=message(); }
+render2();
+
+const toast=$('#toast');
+const showToast=m=>{toast.textContent=m;toast.classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>toast.classList.remove('show'),2600)};
+$('#copy').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(message()); showToast('Pedido copiado');}
+  catch(e){showToast('Não foi possível copiar. Selecione o texto ao lado.')}
+});
+$('#wa').addEventListener('click',()=>{ navigator.clipboard?.writeText(message()).catch(()=>{}); showToast('Pedido copiado. Cole na conversa.'); });
+
+/* cursor azul, spotlight no hero, tilt nos cards, botões magnéticos, contadores, título animado */
+if(matchMedia('(pointer:fine)').matches && !reduce){
+  const dot=document.createElement('div');dot.className='cur-dot';
+  const ring=document.createElement('div');ring.className='cur-ring';
+  document.body.append(dot,ring);
+  let rx=0,ry=0,mx=0,my=0;
+  addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'},{passive:true});
+  (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+  $$('a,button,.work').forEach(el=>{el.addEventListener('pointerenter',()=>ring.classList.add('big'));el.addEventListener('pointerleave',()=>ring.classList.remove('big'))});
+  $$('.btn').forEach(b=>{
+    b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${((e.clientX-r.left)-r.width/2)*.18}px,${((e.clientY-r.top)-r.height/2)*.18}px)`});
+    b.addEventListener('pointerleave',()=>b.style.transform='');
+  });
+  works.forEach(w=>{
+    w.addEventListener('pointermove',e=>{const r=w.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      w.style.transform=`perspective(900px) rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*8).toFixed(2)}deg) scale(1.01)`});
+    w.addEventListener('pointerleave',()=>w.style.transform='');
+  });
+}
+const hero=$('.hero');
+const spot=document.createElement('div');spot.className='spot';hero.prepend(spot);
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();spot.style.setProperty('--mx',(e.clientX-r.left)+'px');spot.style.setProperty('--my',(e.clientY-r.top)+'px')});
+
+/* título: entrada suave */
+const h1=$('.hero h1');
+if(h1&&!reduce){h1.style.opacity='0';h1.style.transform='translateY(30px)';h1.style.transition='opacity 1.2s var(--ease),transform 1.2s var(--ease)';requestAnimationFrame(()=>requestAnimationFrame(()=>{h1.style.opacity='1';h1.style.transform='none'}))}
+/* contadores */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const b=e.target,target=parseInt(b.textContent,10);if(isNaN(target)||reduce)return;
+  const t0=performance.now();const dur=900;
+  (function f(now){const p=Math.min(1,(now-t0)/dur);b.textContent=Math.round(target*p);if(p<1)requestAnimationFrame(f)})(t0);
+}),{threshold:.6});
+$$('.stats b').forEach(b=>cio.observe(b));
+})();
+</script>
+<script>
+(()=>{const hv=document.querySelector('.hero video');
+if(hv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  addEventListener('scroll',()=>{const y=scrollY;if(y<innerHeight)hv.style.transform=`translateY(${y*.22}px) scale(1.08)`},{passive:true});
+}
+document.querySelectorAll('.work').forEach(w=>{w.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();w.click()}})});
+})();
+</script>
+</body>
+</html>
